@@ -30,3 +30,6 @@ Completed as a learning project.
 Workflow File
 
 The exported n8n workflow is available in "My workflow.json".
+## Workflow Screenshot
+
+![n8n Workflow](workflow.png)
