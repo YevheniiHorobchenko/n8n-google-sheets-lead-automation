@@ -1,0 +1,145 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "db1a3b02-4d43-49e0-bff5-1b819c2cb21c",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"name\": \"Ivan\",\n  \"email\": \"ivan@gmail.com\",\n  \"Phone\": \"+4337382922\"\n  \n}\n",
+        "includeOtherFields": "=",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "64d58f56-7bc4-452d-ba81-2771bdf79d74",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1rK7DVGhdqjOx0ogmjC_2rW-tfSqbx8vme94teKleIO4",
+          "mode": "list",
+          "cachedResultName": "AI Leads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rK7DVGhdqjOx0ogmjC_2rW-tfSqbx8vme94teKleIO4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "AI_n8n",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rK7DVGhdqjOx0ogmjC_2rW-tfSqbx8vme94teKleIO4/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "31e13e@wew.com"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Date",
+              "displayName": "Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "test",
+              "displayName": "test",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        432,
+        0
+      ],
+      "id": "055c8445-ef0d-46d5-838d-a5b4b90d4e22",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "IU56bXSUXRSt1R5q",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "5b24dc59-1d04-4ea8-83f6-581d62f2f57b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "4a01fb5ed29bbefb16e542dc60ad2146f33061b02d652d2fe3340bb508afff6b"
+  },
+  "nodeGroups": [],
+  "id": "j0KnEerYXOOiRP0V",
+  "tags": []
+}
